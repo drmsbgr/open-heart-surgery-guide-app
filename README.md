@@ -58,3 +58,6 @@ eas build -p android --profile production
 - `hooks/`: Veri çekme (`useData`) ve tema (`useThemeColor`) hook'ları.
 - `assets/`: Resimler, logolar ve yerel veri (`data.json`).
 - `lib/`: Supabase istemci ayarları.
+
+
+APK link: https://expo.dev/artifacts/eas/h1SBtfEHAZVTGv6sc3NmSg.apk
