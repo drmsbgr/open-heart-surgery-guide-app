@@ -1,0 +1,93 @@
+{
+  "topics": [
+    {
+      "id": "1",
+      "title": "Genel Bilgiler",
+      "icon": "info",
+      "content": "Açık kalp ameliyatı, kalbin kendisinde veya kalpten çıkan büyük damarlarda yapılan cerrahi işlemleri kapsar. Bu ameliyatlar genellikle koroner arter bypass (CABG), kapak tamiri veya değişimi, doğumsal kalp anomalilerinin düzeltilmesi gibi nedenlerle yapılır. Amacımız, kalp sağlığınızı iyileştirmek ve yaşam kalitenizi artırmaktır."
+    },
+    {
+      "id": "2",
+      "title": "Ameliyat Öncesi Dönem",
+      "icon": "calendar-check",
+      "subtopics": [
+        {
+          "id": "2-1",
+          "title": "Hazırlık Süreci",
+          "content": "Ameliyat öncesinde kan tahlilleri, EKG, akciğer filmi ve anestezi muayenesi yapılır. Kullanmakta olduğunuz ilaçları doktorunuza bildirmeniz önemlidir."
+        },
+        {
+          "id": "2-2",
+          "title": "Beslenme ve Hijyen",
+          "content": "Ameliyattan önceki gece saat 24:00'ten sonra bir şey yiyip içmemeniz gerekmektedir. Vücut temizliği için size verilecek özel solüsyonla duş almanız istenecektir."
+        },
+        {
+          "id": "2-3",
+          "title": "Psikolojik Hazırlık",
+          "content": "Stres ve kaygı normaldir. Doktorunuz ve hemşirelerinizle endişelerinizi paylaşmaktan çekinmeyin."
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Ameliyathane Dönemi",
+      "icon": "activity",
+      "subtopics": [
+        {
+          "id": "3-1",
+          "title": "Ameliyathane Ortamı",
+          "content": "Ameliyathane soğuk ve steril bir ortamdır. Sizi uyutmak için damar yolu açılacak ve anestezi verilecektir."
+        },
+        {
+          "id": "3-2",
+          "title": "Ameliyat Süresi",
+          "content": "Ameliyatın türüne göre süre değişebilir ancak genellikle 3-6 saat sürer."
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Ameliyat Sonrası Yoğun Bakım",
+      "icon": "heart-pulse",
+      "content": "Ameliyattan sonra genellikle 1-2 gün yoğun bakımda kalırsınız. Burada hayati fonksiyonlarınız sürekli izlenir. Solunum cihazına bağlı olabilirsiniz, bu süreçte konuşamazsınız ancak hemşireler ihtiyaçlarınızı anlayacaktır."
+    },
+    {
+      "id": "5",
+      "title": "Servisteki Bakım",
+      "icon": "hospital",
+      "content": "Yoğun bakımdan çıktıktan sonra servise alınırsınız. Burada yürüyüş egzersizleri, solunum fizyoterapisi ve yara bakımı önemlidir. Ağrı kontrolü için ilaçlarınız düzenlenecektir."
+    },
+    {
+      "id": "6",
+      "title": "Evde Bakım",
+      "icon": "home",
+      "content": "Taburcu olduktan sonra evde dinlenmeli, ağır kaldırmamalı ve doktorunuzun önerdiği egzersizleri yapmalısınız. İlaçlarınızı düzenli kullanmalı ve kontrollerinizi aksatmamalısınız. Ateş, nefes darlığı veya yara yerinde akıntı olursa hemen doktorunuza başvurun."
+    },
+    {
+      "id": "7",
+      "title": "Kaynaklar",
+      "icon": "book-open",
+      "content": "Türk Kalp Vakfı, Sağlık Bakanlığı Kalp Sağlığı Portalı ve hastanemizin web sitesinden detaylı bilgilere ulaşabilirsiniz."
+    }
+  ],
+  "videos": [
+    {
+      "id": "v1",
+      "title": "Kalp Sağlığı ve Egzersiz",
+      "url": "https://www.youtube.com/watch?v=abcdefg",
+      "thumbnail": "https://img.youtube.com/vi/abcdefg/hqdefault.jpg"
+    },
+    {
+      "id": "v2",
+      "title": "Ameliyat Sonrası Beslenme",
+      "url": "https://www.youtube.com/watch?v=hijklmn",
+      "thumbnail": "https://img.youtube.com/vi/hijklmn/hqdefault.jpg"
+    },
+    {
+      "id": "v3",
+      "title": "Nefes Egzersizleri",
+      "url": "https://www.youtube.com/watch?v=opqrstu",
+      "thumbnail": "https://img.youtube.com/vi/opqrstu/hqdefault.jpg"
+    }
+  ]
+}
