@@ -1,39 +1,60 @@
-# Açık Kalp Ameliyatı Hasta Eğitim Rehberi
+# Açık Kalp Ameliyatı Hasta Eğitim Rehberi (Open Heart Surgery Guide)
 
-Bu proje, açık kalp ameliyatı geçirecek hastaları ameliyat öncesi, sırası ve sonrası süreçler hakkında bilgilendirmek amacıyla geliştirilmiş bir mobil uygulamadır.
+Açık kalp ameliyatı olacak hastalar ve yakınları için bilgilendirici, modern ve erişilebilir bir mobil uygulama.
 
-## Özellikler
+## 🚀 Özellikler
 
-- **Bölümler:** Ameliyat sürecinin aşamalarına göre ayrılmış detaylı bilgilendirme içerikleri.
-- **Videolar:** Eğitim amaçlı video içeriklerine hızlı erişim.
-- **Dinamik İçerik:** Tüm içerik ve videolar merkezi bir veri dosyasından yönetilir.
-- **Tema Desteği:** Kullanıcı tercihine göre Açık ve Koyu mod desteği.
-- **Aşama Yönetimi:** Loading ve Hata durumları için kullanıcı geri bildirimleri.
+- **Kapsamlı İçerik**: Ameliyat öncesi hazırlıktan ameliyat sonrası bakıma kadar detaylı rehberler.
+- **Video Kütüphanesi**: Önemli egzersizler ve bakım süreçleri için video kaynakları.
+- **Metin Okuma (TTS)**: Görme zorluğu çeken veya okumakta zorlanan hastalar için bölümleri sesli dinleme özelliği.
+- **Kişiselleştirilebilir Temalar**: Mavi (Varsayılan), Mor ve Turuncu renk seçenekleri.
+- **Karanlık Mod**: Göz yormayan gece modu desteği.
+- **Modern Tasarım**: Gradient başlıklar, animasyonlu kartlar ve temiz arayüz.
+- **Offline & Online Mod**: Supabase entegrasyonu ile anlık veri güncellemesi, internet yoksa yerel verilerle çalışma (Fallback).
 
-## Teknolojiler
+## 🛠️ Kurulum
 
-- **React Native** + **Expo**
-- **Expo Router** (Dosya tabanlı yönlendirme)
-- **TypeScript**
-- **Lucide React Native** (İkon seti)
+1.  **Projeyi Klonla**:
+    ```bash
+    git clone https://github.com/KULLANICI_ADI/REPO_ADI.git
+    cd guide-app
+    ```
 
-## Kurulum ve Çalıştırma
+2.  **Bağımlılıkları Yükle**:
+    ```bash
+    npm install
+    ```
 
-1. Projeyi klonlayın veya indirin.
-2. Bağımlılıkları yükleyin:
-   ```bash
-   npm install
-   ```
-3. Uygulamayı başlatın:
-   ```bash
-   npx expo start
-   ```
-4. Mobil cihazınızdaki Expo Go uygulamasıyla QR kodu taratın veya emülatörde çalıştırın.
+3.  **Çevresel Değişkenleri Ayarla (.env)**:
+    - `.env.example` dosyasının adını `.env` yapın.
+    - Supabase URL ve API Key bilgilerinizi ekleyin (Opsiyonel: Eklenmezse `data.json` kullanılır).
 
-## Proje Yapısı
+4.  **Uygulamayı Başlat**:
+    ```bash
+    npx expo start --clear
+    ```
 
-- `app/`: Uygulama ekranları ve yönlendirme yapısı.
-- `components/`: Tekrar kullanılabilir UI bileşenleri.
-- `constants/`: Tema renkleri ve sabitler.
-- `hooks/`: Özel hook'lar (veri çekme, tema yönetimi vb.).
-- `assets/`: Görseller ve veri dosyası (`data.json`).
+## 🏗️ Build Alma (APK / AAB)
+
+Bu proje **EAS Build** ile yapılandırılmıştır.
+
+```bash
+# EAS CLI Yükle
+npm install -g eas-cli
+
+# Android APK (Test)
+eas build -p android --profile preview
+
+# Android Production (Play Store)
+eas build -p android --profile production
+```
+
+## 📂 Proje Yapısı
+
+- `app/`: Expo Router ekranları ve navigasyon.
+- `components/`: Tekrar kullanılabilir UI bileşenleri (`ThemedText`, `ThemedView` vb.).
+- `constants/`: Renkler ve konfigürasyonlar.
+- `context/`: Tema yönetimi (`ThemeContext`).
+- `hooks/`: Veri çekme (`useData`) ve tema (`useThemeColor`) hook'ları.
+- `assets/`: Resimler, logolar ve yerel veri (`data.json`).
+- `lib/`: Supabase istemci ayarları.
