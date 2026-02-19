@@ -2,17 +2,16 @@ import { Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
 
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
-import { Home, BookOpen, Video } from 'lucide-react-native';
+import { useTheme } from '@/context/ThemeContext';
+import { Home, BookOpen, Video, Settings } from 'lucide-react-native';
 
 export default function TabLayout() {
-    const colorScheme = useColorScheme();
+    const { colors } = useTheme();
 
     return (
         <Tabs
             screenOptions={{
-                tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+                tabBarActiveTintColor: colors.primary,
                 headerShown: false,
                 tabBarStyle: Platform.select({
                     ios: {
@@ -41,6 +40,13 @@ export default function TabLayout() {
                 options={{
                     title: 'Videolar',
                     tabBarIcon: ({ color }) => <Video color={color} />,
+                }}
+            />
+            <Tabs.Screen
+                name="settings"
+                options={{
+                    title: 'Ayarlar',
+                    tabBarIcon: ({ color }) => <Settings color={color} />,
                 }}
             />
         </Tabs>

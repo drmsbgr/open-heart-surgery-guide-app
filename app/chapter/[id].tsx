@@ -1,13 +1,43 @@
-import { StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity, View } from 'react-native';
 import { useLocalSearchParams, Stack } from 'expo-router';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { useData } from '@/hooks/useData';
 import { Loading } from '@/components/Loading';
+import * as Speech from 'expo-speech';
+import { Volume2, Square } from 'lucide-react-native';
+import { useTheme } from '@/context/ThemeContext';
+import { useState, useEffect } from 'react';
 
 export default function ChapterDetailScreen() {
     const { id } = useLocalSearchParams();
     const { data: topic, loading, error } = useData((d) => d.topics.find((t) => t.id === id));
+    const { colors } = useTheme();
+    const [isSpeaking, setIsSpeaking] = useState(false);
+
+    useEffect(() => {
+        return () => {
+            Speech.stop();
+        };
+    }, []);
+
+    const toggleSpeech = () => {
+        if (isSpeaking) {
+            Speech.stop();
+            setIsSpeaking(false);
+        } else {
+            if (!topic) return;
+            const textToSay = `${topic.title}. ${topic.content} ${topic.subtopics?.map((s: any) => s.title + ". " + s.content).join(" ")}`;
+            Speech.speak(textToSay, {
+                language: 'tr-TR',
+                onDone: () => setIsSpeaking(false),
+                onStopped: () => setIsSpeaking(false),
+                onError: () => setIsSpeaking(false)
+            });
+            setIsSpeaking(true);
+        }
+    };
+
 
     if (loading) return <Loading />;
 
@@ -22,9 +52,19 @@ export default function ChapterDetailScreen() {
 
     return (
         <ThemedView style={styles.container}>
-            <Stack.Screen options={{ title: topic.title }} />
+            <Stack.Screen options={{
+                title: topic.title,
+                headerRight: () => (
+                    <TouchableOpacity onPress={toggleSpeech} style={{ marginRight: 16 }}>
+                        {isSpeaking ? <Square color={colors.primary} size={24} /> : <Volume2 color={colors.primary} size={24} />}
+                    </TouchableOpacity>
+                )
+            }} />
             <ScrollView contentContainerStyle={styles.content}>
-                <ThemedText type="title" style={styles.title}>{topic.title}</ThemedText>
+                <View style={styles.headerRow}>
+                    <ThemedText type="title" style={styles.title}>{topic.title}</ThemedText>
+                </View>
+
                 <ThemedText style={styles.body}>{topic.content}</ThemedText>
 
                 {topic.subtopics && topic.subtopics.map((sub: any) => (
@@ -45,8 +85,14 @@ const styles = StyleSheet.create({
     content: {
         padding: 24,
     },
+    headerRow: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: 16
+    },
     title: {
-        marginBottom: 16,
+        flex: 1
     },
     body: {
         marginBottom: 16,

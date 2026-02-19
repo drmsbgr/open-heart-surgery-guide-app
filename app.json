@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "guide-app",
+    "name": "Açık Kalp Ameliyatı Hasta Rehberi",
     "slug": "guide-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -28,6 +28,13 @@
     },
     "plugins": [
       "expo-router"
-    ]
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "9195a82c-5bf3-4d39-90ef-f66224cc40c9"
+      }
+    },
+    "owner": "drmsbgrs-organization"
   }
 }
